@@ -44,12 +44,12 @@ var KONAMI = (function(){
 		var e = evt || window.event;
 		//store keycode in array
 		userSequence.push(e.keyCode);
-		//if there are more than eight, remove the first one
+		//if there are more codes in user sequence than in code sequence, remove the first one
 		if(userSequence.length > konamiSequence.length) {
 			userSequence.shift();
 		}
 
-		//if there are eight, check for match
+		//if there are enough, check for match
 		if(userSequence.length === konamiSequence.length) {
 			checkForMatch();
 		}
